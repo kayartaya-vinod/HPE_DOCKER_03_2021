@@ -1,0 +1,23 @@
+version: "3.8"
+
+# list of containers to be created
+services:
+  mysql8server:
+    # docker run --name=mysql8server
+    # name: mysql8server
+    # docker run --name=mysql8server mysql:latest
+    image: "mysql:latest"
+    # docker run --name=mysql8server -e MYSQL_ROOT_PASSWORD=Welcome#123 mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=Welcome#123
+    # docker run --name=mysql8server -e MYSQL_ROOT_PASSWORD=Welcome#123 -p 3306:3306 -p 33060:33060 mysql:latest
+    ports:
+      - "3306:3306"
+      - "33060:33060"
+    # docker run --name=mysql8server -e MYSQL_ROOT_PASSWORD=Welcome#123 -p 3306:3306 -p 33060:33060 -v mysql8serverdata:/var/lib/mysql mysql:latest
+    volumes:
+      - mysql8serverdata:/var/lib/mysql
+
+volumes:
+  # docker volume create mysql8serverdata
+  mysql8serverdata:

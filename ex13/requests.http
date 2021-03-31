@@ -1,0 +1,18 @@
+http://localhost:8080/api/books
+
+###
+
+http://localhost:8080/api/books/1
+
+###
+
+POST /api/books
+HOST: localhost:8080
+Content-Type: application/json
+Accept: application/json
+
+{
+    "title": "Understanding Docker",
+    "author": "John Doe",
+    "price": 500.0
+}

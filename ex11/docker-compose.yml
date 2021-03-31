@@ -1,0 +1,12 @@
+version: "3.8"
+
+services: 
+  node-express-app:
+    container_name: 'express-app'
+    build: 
+      context: .
+    environment: 
+      - PORT=4500
+    ports:
+      - '8080:4500'
+    restart: on-failure
